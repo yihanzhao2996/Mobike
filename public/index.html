@@ -1,0 +1,52 @@
+<!doctype html>  
+<html lang="en">  
+    <head>
+        <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> -->
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>   
+        <script src="javascripts/clientApp.js"> </script>
+        <link rel="stylesheet" href="stylesheets/style.css">
+    </head>
+    <body>
+        <h1>Twitt Map</h1>
+        <div id="future"></div>
+
+
+        <form>
+        <select id="keyList" >
+          <option id="key5" value="All" selected>All</option>
+          <option id="key1" value="Trump">Trump</option>
+          <option id="key2" value="China">China</option>
+          <option id="key3" value="Facebook">Facebook</option>  
+          <option id="key4" value="Amazon">Amazon</option>
+          <option id="key6" value="he">he</option>
+          <option id="key7" value="she">she</option>
+          <option id="key8" value="it">it</option>
+          <option id="key9" value="love">love</option>
+          <option id="key10" value="city">city</option>
+          <option id="key11" value="travel">travel</option>
+
+        </select>
+        <form>
+            
+            
+        <div id="buttons">
+            <a href="#" id='startBtn' onclick="startStream()" class="btn blue">Start</a>
+            <a href="#" id='endBtn'   onclick="stopStream()" class="btn green">Stop</a>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+        <div id="map" style=" width:1200px; height:400px;">
+       
+    
+        <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIyhRhcHqWl60901bjufHkYmbOWWCdvUs&libraries=visualization&callback=myMap"> 
+
+        </script>
+    </body>
+</html>  
