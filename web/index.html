@@ -11,6 +11,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
+		 <!-- Custom CSS -->
+        <link rel="stylesheet" href="assets/css/table.css"  />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 	</head>
@@ -28,7 +30,8 @@
 							<p>Columbia University <br>
 								ELEN E6889 Spring'17 <br>
 								Fundamentals of Stream Processing<br>
-								Mobike Analysis_Group 11<br>
+								Mobike Analysis<br>
+								Group 11<br>
 							</p>
 						</div>
 
@@ -81,9 +84,36 @@
 				<!-- Intro -->
 					<section id="top" class="one dark cover">
 						<div class="container">
+                             
 
-								<iframe width="560" height="315" src="https://www.youtube.com/embed/_AlcRoqS65E" frameborder="0" allowfullscreen></iframe>
-	
+                             <!-- Table -->
+								<table id="data-table">
+								    <thead>
+								        <tr>
+								            <td>Bike ID</td>
+								            <td>Start_Time</td>
+								            <td>End_Time</td>
+								            <td>Start_GPS</td>
+								            <td>End_GPS</td>
+								            <td>Distance</td>
+								            <td>Duration</td>
+								            <td>Speed</td>
+								            <td>Accumulate_Distance</td>
+								        </tr>
+								    </thead>
+								    <tbody>
+								    <tr>
+								        <td colspan="3" style="text-align:center">There are no items to list...</td>
+								    </tr>
+								    </tbody>
+								</table>
+								<br />
+								<button id="btn-update">Update List</button>
+	                         
+
+	                       <!-- Table -->
+
+
 								<h2 class="alt">Project Name</h2>
 								<p>Project Wonderland is a blah blah blah</p>
 								<p>(Abstract here)</p>
@@ -273,6 +303,7 @@
 			<script src="assets/js/jquery.scrollzer.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
+			<script src="assets/js/table.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 
