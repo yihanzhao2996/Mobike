@@ -9,10 +9,9 @@ import socket
 import time
 import MySQLdb
 
-db = MySQLdb.connect("mobike.celsjntapdmx.us-west-2.rds.amazonaws.com","YYY","mypassword","mobike" )
-
+db = MySQLdb.connect("localhost","root","","mobike" )
 cursor = db.cursor()
-
+# db.select_db('mobike')
 
 cursor.execute('use mobike')
 
@@ -30,6 +29,7 @@ def gatherByTime(input_data):
     basetime = input_data[0][0]
     start = 0
     end = 0
+    r_id = 0
     for row in input_data:
         if row[0] == basetime:
             end += 1
@@ -40,20 +40,21 @@ def gatherByTime(input_data):
             for line in input_data[start:end+1]:
                 # Message += ' '.join(line)+'\n'
 
-                cursor.execute('insert into heatmap (bike_id,park_time,la,lo) VALUES ("%s", "%s","%s","%s")' % \
-                 (line[1],line[0],line[-1],line[-2]))
-
+                cursor.execute('insert into heatmap (bike_id,result_id, park_time,la,lo) VALUES ("%s", "%s" , "%s","%s","%s")' % \
+                 (line[1],r_id,line[0],line[-1],line[-2]))
+                
                 # conn.send(pickle.dumps(input_data[start:end+1]))
 
             # rddQueue += [ssc.sparkContext.parallelize(input_data[start:end+1],10)]
-            cursor.commit()
             start = end + 1
             end += 1
             basetime = row[0]
-            break
+            r_id += 1
+            db.commit()
 
 
             time.sleep(1)
+    
     cursor.close()
 if __name__ == '__main__':
     data = unzip('20170412-200908.csv.gz')
