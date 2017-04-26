@@ -276,3 +276,51 @@ function myMap() {
 		heatData.push(new google.maps.LatLng(30.779854, 103.984445)); 
 		heatData.push(new google.maps.LatLng(30.779862, 103.984397)); 
 }
+
+
+
+
+
+// $(document).ready(function(e) {
+var count = 0
+function getGeo(){
+         // alert(count)
+         $.ajax({
+            url: '/mapPos',
+            data: {num: count},
+            type: 'POST',
+            success: function(response) {
+               alert(response)
+               res = JSON.parse(response);
+               addToHeatDaTA(res);
+               
+               count += 1;
+               // alert(count)
+
+            },
+            error: function(error) {
+                // alert("fail");
+            }
+            
+        });
+        
+        return false;
+    }
+
+
+function addToHeatDaTA(res){
+	    alert(index)
+	
+        $.each(res, function(index, item) {
+        	var lat = item["lat"+''];
+        	alert(lat);
+        	var lng = item["lng"+''];
+        	alert("lng"+lat)
+            heatData.push(new google.maps.LatLng(lat,104.018283)); 
+            
+        });       
+}
+
+getGeo();
+
+// });

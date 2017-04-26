@@ -55,13 +55,9 @@ $(document).ready(function(e) {
     }
   
     
-    // var interval_count = setInterval(updatecount(), 5000);
-    // interval_ = setInterval(getData(), 5000);
-    
-    var refreshId = setInterval(getData, 2000);
+    // var refreshId = setInterval(getData, 2000);
     getData();
-    // loadTable('data-table', ['field1', 'field2', 'field3','field4', 'field5', 'field6','field7', 'field8', 'field9'], data1);
-    // getData();
+    
     
     // $('#btn-update').click(function(e) {
     //     loadTable('data-table', ['field1', 'field2', 'field3','field4', 'field5', 'field6','field7', 'field8', 'field9'], data1);
