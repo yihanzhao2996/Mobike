@@ -7,6 +7,10 @@ import sys
 import pickle
 import socket
 import time
+from os import walk
+import re
+import heapq
+import datetime
 # from pyspark.streaming.kafka import KafkaUtils
 
 # from pyspark import SparkContext
@@ -23,6 +27,26 @@ s.listen(1)
 conn, addr = s.accept()
 # print 'Connection address:', addr
 
+
+def walker():
+    db_path = 'db/'
+    f = []
+    pq = []
+    base_time = datetime.datetime(2017,4,6,0,0,0)
+    print base_time
+    for (dirpath, dirnames, filenames) in walk(db_path):
+        for filename in filenames:
+            print filename
+            mt_obj = re.search(r'.*.gz\b', filename)
+            if mt_obj:
+                time_str = filename.split('.')[0]
+                time_time = datetime.datetime.strptime(time_str, "%Y%m%d-%H%M%S")
+                heapq.heappush(pq,((time_time-base_time).total_seconds(), filename))
+                f.extend([filename])
+    print f
+    print len(f)
+    print pq
+    return pq
 
 def unzip(file_name):
     os.system("gunzip -k " + file_name)  # unzip type: -k keep the origin .gz file
@@ -81,4 +105,6 @@ if __name__ == '__main__':
     # if len(sys.argv) != 3:
     #     print("Usage: Unzip.py <zk> <topic>")
     #     exit(-1)
-    data = unzip('20170412-200908.csv.gz')
+    pq = walk()
+    for name in pq:
+        data = unzip(name[1])
