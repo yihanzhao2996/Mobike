@@ -34,9 +34,9 @@
 					<!-- Logo -->
 						<div id="logo">
 							<!-- <span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span> -->
-							<h1 id="title">Mobike Analysis</h1>
+							<h1 id="title">Bike Sharing Analysis</h1>
 							<p>Columbia University <br>
-								ELEN E6889 Spring'17 <br>
+								ELEN E6889 Spr'17 <br>
 								Fundamentals of Stream Processing<br>
 								Group 11<br>
 							</p>
@@ -58,10 +58,10 @@
 
 							-->
 							<ul>
-								<li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">System</span></a></li>
-								<li><a href="#motivation" id="motivation-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Heatmap</span></a></li>
-								<li><a href="#system" id="system-link" class="skel-layers-ignoreHref"><span class="icon fa-th">System</span></a></li>
-								<li><a href="#results" id="results-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Results</span></a></li>
+								<li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Mobike</span></a></li>
+								<li><a href="#motivation" id="motivation-link" class="skel-layers-ignoreHref"><span class="icon fa-th">In_Heatmap</span></a></li>
+								<li><a href="#system" id="system-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Out_Heatmap</span></a></li>
+								<li><a href="#results" id="results-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Citibike Usage</span></a></li>
 								<li><a href="#references" id="references-link" class="skel-layers-ignoreHref"><span class="icon fa-th">References</span></a></li>
 								<li><a href="#team" id="team-link" class="skel-layers-ignoreHref"><span class="icon fa-user">Our Team</span></a></li>
 								<li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact</span></a></li>
@@ -92,24 +92,56 @@
 					<section id="top" class="one dark cover">
 						<div class="container">
                              
-                             <h2 class="alt">Mobike</h2>
-								<p>Project Wonderland is a blah blah blah</p>
-								<p>(Abstract here)</p>
+                            <header>
+								<h2>Available Mobike Heatmap</h2>
+							</header>
+							<div id="map" style=" width:920px; height:480px;">
+                        </div>
+					</section>
 
-                             <!-- Table -->
+				<!-- Portfolio -->
+					<section id="motivation" class="two">
+						<div class="container">
+
+						    <header>
+								<h2>City Bike Into Station Heatmap</h2>
+							</header>
+                            <div id="c_map" style=" width:920px; height:480px;">
+							    
+						</div>
+					</section>
+					
+					
+					<section id="system" class="two">
+						<div class="container">
+
+							<header>
+								<h2>City Bike Out of Station Heatmap</h2>
+							</header>
+                            <div id="c_map_2" style=" width:920px; height:480px;">
+					
+	
+						</div>
+					</section>
+					
+					
+					<section id="results" class="one dark cover">
+						<div class="container">
+							
+							<header>
+								<h2>City Bike Realtime Top Usage</h2>
+							</header>
+									  <!-- Table -->
 								<table id="data-table">
 								    <thead>
 								        <tr>
 								        	<!-- <div id = "row1">1,2,3,4,5,6,7,8,9</div> -->
 								            <td>Bike ID</td>
-								            <td>Start_Time</td>
+								            <td>Acc_Distance</td>
+								            <td>Acc_Time</td>
 								            <td>End_Time</td>
-								            <td>Start_GPS</td>
-								            <td>End_GPS</td>
-								            <td>Distance</td>
-								            <td>Duration</td>
-								            <td>Speed</td>
-								            <td>Accumulate_Distance</td>
+								            <td>End_Station</td>
+								            <td>Velocity</td>
 								        </tr>
 								    </thead>
 								    <tbody>
@@ -123,74 +155,6 @@
 	                         
 
 	                       <!-- Table -->
-
-							<footer>
-								<a href="#motivation" class="button scrolly">Motivation</a>
-							</footer>
-
-						</div>
-					</section>
-
-				<!-- Portfolio -->
-					<section id="motivation" class="two">
-						<div class="container">
-
-							<header>
-								<h2>Available Bike Heatmap</h2>
-							</header>
-							<div id="map" style=" width:920px; height:480px;">
- 
-
-						</div>
-					</section>
-					
-					
-					<section id="system" class="three">
-						<div class="container">
-
-							<header>
-								<h2>System</h2>
-							</header>
-							
-							<p align="left">Remember to use combination of descriptions, photos, and figures</p>
-							
-							<h3 align="left">Architecture</h3>
-
-							<p align="left">Blah blah blah</p>
-							
-							
-							<h3 align="left">Technical Components</h3>
-
-							<p align="left">Blah blah blah</p>
-
-							
-							<h3 align="left">Prototype</h3>
-
-							<p align="left">Blah blah blah</p>
-							
-							
-							
-						</div>
-					</section>
-					
-					
-					<section id="results" class="two">
-						<div class="container">
-
-							<header>
-								<h2>Results</h2>
-							</header>
-
-							<p align="left">Remember to use figures to help illustrate results</p>
-
-
-	<!-- 						<article class="item">
-								<a href="#" class="image fit"><img src="../images/pic06.jpg" alt="" /></a>
-								<header>
-									<h3>Caption</h3>
-								</header>
-							</article> -->
-							
 							
 						</div>
 					</section>
@@ -224,7 +188,7 @@
 									<article class="item">
 										<a href="#" class="image fit"><img src="/images/pic07.jpg" alt="" /></a>
 										<header>
-											<h3>Team Member</h3>
+											<h3>Yihan Zhao</h3>
 											<p>Description and link</p>
 										</header>
 									</article>
@@ -233,7 +197,7 @@
 									<article class="item">
 										<a href="#" class="image fit"><img src="/images/pic07.jpg" alt="" /></a>
 										<header>
-											<h3>Team Member</h3>
+											<h3>Yuanxu Zhu</h3>
 											<p>Description and link</p>
 										</header>
 									</article>
@@ -242,7 +206,7 @@
 									<article class="item">
 										<a href="#" class="image fit"><img src="/images/pic07.jpg" alt="" /></a>
 										<header>
-											<h3>Team Member</h3>
+											<h3>Yang yang</h3>
 											<p>Description and link</p>
 										</header>
 									</article>
@@ -261,14 +225,15 @@
 							</header>
 
 							<p align="left">
-								<strong>Contact Name 1: </strong>email here</br>
-								<strong>Contact Name 2: </strong>email here</br>
+								<strong>Yihan Zhao: </strong>yz2996@columbia.edu</br>
+								<strong>Yang Yang: </strong>yy2694@columbia.edu</br>
+								<strong>Yuanxu Zhu: </strong>yz2990@columbia.edu</br>
 								<strong>Other Contact Information: </strong>other contact info</br>
 							</br>
 								<strong>Columbia University </strong><a href="http://www.ee.columbia.edu">Department of Electrical Engineering</a><br>
 								<strong>Class Website:</strong>
-									<a href="https://edblogs.columbia.edu/eecse4764-001-2016-3/">Columbia University EECS E4764 Fall '16 IoT</a></br>
-								<strong>Instructor:</strong> <a href="http://fredjiang.com/">Professsor Xiaofan (Fred) Jiang</a>
+									<a href="https://sites.google.com/site/fundamentalsofstreamprocessing/home">Columbia University ElEN 6889</a></br>
+								
 							</p>
 							
 
